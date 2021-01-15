@@ -22,6 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', 'App\Http\Controllers\RegisterController@register');
 Route::post('/login', 'App\Http\Controllers\LoginController@login');
 
+Route::post('/forgot_password', 'App\Http\Controllers\LoginController@forgotPassword');
+
+Route::post('/reset-password', 'App\Http\Controllers\LoginController@resetPassword');
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/logout', 'App\Http\Controllers\LoginController@logout');
